@@ -8,4 +8,4 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   </div>
 `;
 
-const weatherCard = setupWeatherCard({ selector: "#weather-card" });
+setupWeatherCard({ selector: "#weather-card" });

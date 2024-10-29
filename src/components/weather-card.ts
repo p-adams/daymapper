@@ -1,10 +1,13 @@
 import styles from "./weather-card.module.css";
-interface WeatherCardConfig {
-  selector: Selector;
-}
+
+interface WeatherCardConfig extends ComponentConfig {}
 
 export function setupWeatherCard(config: WeatherCardConfig) {
-  const element = document.querySelector<HTMLDivElement>(config.selector!);
+  if (!config.selector) {
+    return null;
+  }
+  const element = document.querySelector<HTMLDivElement>(config.selector);
+
   const render = () => {
     if (!element) {
       return null;
